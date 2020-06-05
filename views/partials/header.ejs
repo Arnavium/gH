@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gH</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <a class="navbar-brand" href="/"><i class="fas fa-home"></i>gH</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-nav-demo" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+            <ul class="navbar-nav mr-auto">
+                <a class="nav-item nav-link active" href="/games">Home <span class="sr-only">(current)</span></a>
+            </ul>
+            <ul class="navbar-nav">
+                <%if(!currentUser){%>
+            <li class="nav-item">
+                <a class="nav-link" href="/register">Signup <i class="fas fa-user-plus"></i></a>
+            </li>            
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login <i class="fas fa-user"></i></a>
+            </li>
+            <%}else if(currentUser.username=="Arnav"){%>
+                <li class="nav-item">
+                    <a class="nav-link" href="?"">Hi!! <%=currentUser.username%></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/games/new">Add a new game</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </li>
+            <%}else{%>
+                <li class="nav-item"><a class="nav-link" href="?"">Hi!!<%=currentUser.username%></a></li>
+                <li class="nav-item"><a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i> Log Out></a></li>
+            <%}%>
+        </ul>
+
+    </div>
+</nav>
+<div class="container">
+    <%if(error && error.length>0){%>
+    <div class="alert alert-danger" role="alert">
+        <%= error%>
+    </div>
+    <%}%>
+    <%if(success && success.length>0){%>
+    <div class="alert alert-success" role="alert">
+        <%= success%>
+    </div>
+    <%}%>
+</div>
+   
+    
+
+     

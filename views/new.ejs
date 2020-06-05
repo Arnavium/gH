@@ -1,0 +1,28 @@
+<%-include ("partials/header")-%>
+<h1 style="text-align: center;">CREATING A NEW game</h1>
+<div>
+    <form action="/games" method="POST">
+        <div class="container" style="width: 30%; margin: 25px auto;">
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="title">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="image" placeholder="image">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="genre" placeholder="genre">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="category" placeholder="category">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" type="text" name="description" placeholder="description"></textarea>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">Submit</button>
+            </div>
+            <a href="/games">Go back</a>
+        </div> 
+    </form>
+</div>
+<%-include ("partials/footer")-%>

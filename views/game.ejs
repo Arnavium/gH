@@ -1,0 +1,52 @@
+<%-include ("partials/header")-%>
+<div id="head" class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome To <i class="fas fa-home"></i>gH!!</h1>
+            <p>Explore The Gaming World</p>
+        </div>
+    </header>
+    <div>
+            <a class="btn btn-outline-primary active btn-lg">PC</a>
+            
+            <div class="row">
+                <%data.forEach(function(game){%>
+                <%if(game.category=="PC"){%>
+                    <div class="col-md-3 col-sm-6">
+                        <div id="CARD" class="card">
+                                <img src="<%=game.image%>"class="img-thumbnail">
+                                <div class="card-body">
+                                   <h5 class="card-title"><%=game.name%></h5>
+                                   <p class="card-text"><%=game.genre%></p>
+                                   <a href="/games/<%=game._id%>" class="btn btn-primary btn-sm">More Info</a>
+                                </div>
+                        </div>
+                    </div>
+                <%}})%>
+            </div>    
+                
+    </div>
+    <div id="Mobile">
+        <a class="btn btn-outline-primary active btn-lg">Mobile</a>
+        
+        <div class="row">
+            <%data.forEach(function(game){%>
+            <%if(game.category=="Mobile"){%>
+            <div class="col-md-3 col-sm-6">
+                <div id="CARD" class="card">
+                        <img src="<%=game.image%>"class="img-thumbnail">
+                        <div class="card-body">
+                           <h5 class="card-title"><%=game.name%></h5>
+                           <p class="card-text"><%=game.genre%></p>
+                           <a href="/games/<%=game._id%>" class="btn btn-primary btn-sm">More Info</a>
+                        </div>
+                </div>
+            </div>
+            <%}})%>
+        </div>    
+            
+</div>
+</div>
+
+
+<%-include ("partials/footer.ejs")-%>
